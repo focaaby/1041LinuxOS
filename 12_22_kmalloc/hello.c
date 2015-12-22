@@ -20,6 +20,7 @@ static int __init hello_init(void) {
 	char myname[] = "MaoLin"; 
 	printk(KERN_INFO "MAOLIN_Hello\n");
 	ptr = kmalloc( sizeof(struct student)*10 , GFP_KERNEL);
+	printk(KERN_INFO "MAOLIN, This is using kmalloc()");
 	printk(KERN_INFO "MAOLIN, And this pages address:0x%lx\n",(unsigned long)ptr);
 	
 	if(ptr != NULL) {
