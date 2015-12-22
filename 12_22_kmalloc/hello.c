@@ -19,11 +19,11 @@ static int __init hello_init(void) {
 	int myage = 22;
 	char myname[] = "MaoLin"; 
 	printk(KERN_INFO "MAOLIN_Hello\n");
-	ptr = kmalloc(sizeof(struct student), GFP_KERNEL);
-	ptr_tmp = ptr;
+	ptr = kmalloc( sizeof(struct student)*10 , GFP_KERNEL);
 	printk(KERN_INFO "MAOLIN, And this pages address:0x%lx\n",(unsigned long)ptr);
 	
 	if(ptr != NULL) {
+		ptr_tmp = ptr;
 		for(i = 0; i < 10; i++) {
 			ptr->age = myage + i;
 			strcpy(ptr->name, myname);
